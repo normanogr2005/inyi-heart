@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#020202">
+    <title>Para Inyi | The Golden Flower</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="escena">
+        <div class="luz-ambiente"></div>
+        <div class="estrellas" id="estrellas"></div>
+        <div class="particulas" id="particulas"></div>
+
+        <div class="flor-contenedor">
+            <div class="resplandor"></div>
+
+            <svg class="flor" viewBox="0 0 420 500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="oro" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#fff7b5"/>
+                        <stop offset="35%" stop-color="#ffe267"/>
+                        <stop offset="72%" stop-color="#f5b52a"/>
+                        <stop offset="100%" stop-color="#d9820c"/>
+                    </linearGradient>
+
+                    <linearGradient id="morado" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#df9aff"/>
+                        <stop offset="50%" stop-color="#a43cdb"/>
+                        <stop offset="100%" stop-color="#6c168f"/>
+                    </linearGradient>
+
+                    <linearGradient id="verde" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#55a66b"/>
+                        <stop offset="60%" stop-color="#187443"/>
+                        <stop offset="100%" stop-color="#0c472d"/>
+                    </linearGradient>
+
+                    <radialGradient id="centro">
+                        <stop offset="0%" stop-color="#fffde0"/>
+                        <stop offset="55%" stop-color="#ffe477"/>
+                        <stop offset="100%" stop-color="#e79b16"/>
+                    </radialGradient>
+
+                    <filter id="brilloFlor" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="3.5" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <path class="tallo" d="M212 200 C213 280 219 365 224 458"
+                    fill="none" stroke="#26764a" stroke-width="8" stroke-linecap="round"/>
+
+                <g class="grupo-hoja hoja-derecha">
+                    <path class="hoja"
+                        d="M220 355 C263 309 334 291 376 319 C350 365 277 391 220 355 Z"/>
+                    <path class="nervadura" d="M225 354 C273 345 327 326 371 320"/>
+                </g>
+
+                <g class="grupo-hoja hoja-izquierda">
+                    <path class="hoja"
+                        d="M220 402 C182 368 146 369 130 389 C151 424 190 434 220 402 Z"/>
+                    <path class="nervadura" d="M216 401 C185 394 157 390 135 390"/>
+                </g>
+
+                <g class="petalos">
+                    <g class="petalo p1">
+                        <path d="M207 198 C173 165 138 126 133 86 C169 108 198 153 216 193 Q214 200 207 198 Z"/>
+                    </g>
+                    <g class="petalo p2">
+                        <path d="M207 196 C190 151 184 76 211 35 C240 82 236 151 219 198 Q213 204 207 196 Z"/>
+                    </g>
+                    <g class="petalo p3">
+                        <path d="M214 196 C223 151 264 99 307 92 C310 132 269 178 220 205 Q214 203 214 196 Z"/>
+                    </g>
+                    <g class="petalo p4">
+                        <path d="M218 192 C267 170 325 166 352 196 C329 229 269 227 216 209 Q211 200 218 192 Z"/>
+                    </g>
+                    <g class="petalo p5">
+                        <path d="M204 193 C157 178 105 180 76 213 C109 245 166 232 209 211 Q213 202 204 193 Z"/>
+                    </g>
+                    <g class="petalo p6">
+                        <path d="M207 203 C177 229 157 267 167 309 C195 293 212 248 218 211 Q214 202 207 203 Z"/>
+                    </g>
+                    <g class="petalo p7">
+                        <path d="M216 205 C237 224 260 248 253 279 C228 267 211 240 210 210 Q213 204 216 205 Z"/>
+                    </g>
+                </g>
+
+                <g class="vetas">
+                    <path class="veta v1" d="M211 196 C197 163 193 127 202 91 C213 130 216 163 216 196 Z"/>
+                    <path class="veta v2" d="M207 200 C180 176 151 151 137 128 C169 143 195 173 211 198 Z"/>
+                    <path class="veta v3" d="M216 199 C236 166 266 133 288 119 C276 155 245 187 216 204 Z"/>
+                    <path class="veta v4" d="M207 205 C172 196 140 204 116 222 C153 222 185 214 211 210 Z"/>
+                    <path class="veta v5" d="M217 205 C246 194 278 198 304 213 C274 221 243 216 215 211 Z"/>
+                </g>
+
+                <g class="centro-flor">
+                    <path class="garganta" d="M194 194 Q211 180 228 196 Q233 215 211 230 Q190 217 194 194 Z"/>
+                    <circle class="centro" cx="211" cy="207" r="11"/>
+                    <circle class="semilla" cx="211" cy="207" r="4"/>
+                </g>
+
+                <g class="filamentos">
+                    <path d="M210 203 Q194 173 181 162"/>
+                    <path d="M211 202 Q213 172 220 153"/>
+                    <path d="M214 204 Q235 180 249 175"/>
+                    <circle cx="181" cy="162" r="3.5"/>
+                    <circle cx="220" cy="153" r="3.5"/>
+                    <circle cx="249" cy="175" r="3.5"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="mensaje">
+            <span>Te amo, cachorrita</span>
+            <div class="corazon">♡</div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
